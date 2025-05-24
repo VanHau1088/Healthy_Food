@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodhub</title>
+
+
+
+    <link rel="stylesheet" href="/assets/css/menu_food.css">
+    <link rel="stylesheet" href="./assets/css/foodhub.css">
+    <link rel="stylesheet" href="./assets/css/media_query.css">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-wrapper">
+                <a href="/index.html">
+                    <img src="./assets/images/logo.svg" alt="logo" width="130">
+                </a>
+
+                <ul class="navbar-nav">
+                    <li><a href="./index.html" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">Đặt bàn</a></li>
+                    <li><a href="./menu.html" class="nav-link">Our Menu</a></li>
+                    <li><a href="/menu.html" class="nav-link">ChatBot AI</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                </ul>
+
+                <div class="navbar-btn-group">
+                    <button class="shopping-cart-btn" onclick="toggleCart()">
+                        <img src="./assets/images/cart.svg" alt="shopping cart icon" width="18">
+                        <span class="count" id="cartCount">0</span>
+                    </button>
+
+                    <button class="menu-toggle-btn">
+                        <span class="line one"></span>
+                        <span class="line two"></span>
+                        <span class="line three"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cart-box" id="cartBox">
+            <ul class="cart-box-ul">
+                <h4 class="cart-h4">Giỏ hàng của bạn</h4>
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items sẽ được render ở đây -->
+                </div>
+                
+                <div class="cart-total" id="cartTotal" style="display: none;">
+                    <div>Tổng cộng: <span id="totalAmount">$0</span></div>
+                </div>
+            </ul>
+
+            <div class="cart-btn-group">
+                <button class="btn btn-secondary" onclick="clearCart()">Xóa tất cả</button>
+                <button class="btn btn-primary" onclick="checkout()">Thanh toán</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-content">
+        <div class="header">
+            <h1 class="main-heading">🍽️ Our Menu</h1>
+            <p>Khám phá những món ăn tuyệt vời của chúng tôi</p>
+        </div>
+
+        <div class="menu-controls">
+            <div class="controls-row">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="🔍 Tìm kiếm món ăn..." id="searchInput">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">Tất cả</button>
+                    <button class="filter-btn" data-category="coffee">Đồ uống</button>
+                    <button class="filter-btn" data-category="main">Món chính</button>
+                    <button class="filter-btn" data-category="sushi">Sushi</button>
+                    <button class="filter-btn" data-category="vegan">Chay</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="loader"></div>
+            <p>Đang tải menu...</p>
+        </div>
+
+        <div class="menu-grid" id="menuGrid"></div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <h2>😔 Không tìm thấy món ăn</h2>
+            <p>Hãy thử tìm kiếm với từ khóa khác hoặc chọn danh mục khác</p>
+        </div>
+    </div>
+
+    
+   
+    <script src="./assets/js/menu_food.js"></script>
+      <script src="./assets/js/foodhub.js"></script>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
