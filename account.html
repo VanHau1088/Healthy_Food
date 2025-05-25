@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản Của Tôi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/account.css">
+    <link rel="stylesheet" href="./assets/css/foodhub.css">
+    <link rel="stylesheet" href="./assets/css/media_query.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header -->
+
+    <header>
+        <nav class="navbar">
+            <div class="navbar-wrapper">
+                <a href="/index.html">
+                    <img src="./assets/images/logo.svg" alt="logo" width="130">
+                </a>
+
+                <ul class="navbar-nav">
+                    <li><a href="./index.html" class="nav-link">Home</a></li>
+                    <li><a href="/table.html" class="nav-link">Table</a></li>
+                    <li><a href="/menu.html" class="nav-link">Our Menu</a></li>
+                </ul>
+
+                <div class="navbar-btn-group">
+                  <a href="./menu.html">
+                    <button class="shopping-cart-btn" onclick="toggleCart()">
+                        <img src="./assets/images/cart.svg" alt="shopping cart icon" width="18">
+                        <span class="count" id="cartCount">0</span>
+                    </button>
+                  </a>
+
+                  <a href="./account.html">
+                    <button class="shopping-cart-btn">
+                        <img src="./assets/images/user.png" alt="account user icon" width="18">
+                    </button>
+                  </a>
+
+                    <button class="menu-toggle-btn">
+                        <span class="line one"></span>
+                        <span class="line two"></span>
+                        <span class="line three"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cart-box" id="cartBox">
+            <ul class="cart-box-ul">
+                <h4 class="cart-h4">Giỏ hàng của bạn</h4>
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items sẽ được render ở đây -->
+                </div>
+                
+                <div class="cart-total" id="cartTotal" style="display: none;">
+                    <div>Tổng cộng: <span id="totalAmount">$0</span></div>
+                </div>
+            </ul>
+
+            <div class="cart-btn-group">
+                <button class="btn btn-secondary" onclick="clearCart()">Xóa tất cả</button>
+                <button class="btn btn-primary" onclick="checkout()">Thanh toán</button>
+            </div>
+        </div>
+    </header>
+
+    <br>
+    <br><br><br>
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-profile-mini">
+                <div class="avatar-mini">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face" alt="Avatar" id="sidebarAvatar">
+                </div>
+                <div class="user-info-mini">
+                    <h3 id="sidebarName">User</h3>
+                    <p id="sidebarEmail">User.nguyen@email.com</p>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="profile">
+                    <i class="fas fa-user"></i> Thông tin cá nhân
+                </a>
+                <a href="#" class="nav-item" data-section="cart">
+                    <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                    <span class="badge" id="cartBadge">3</span>
+                </a>
+                <a href="#" class="nav-item" data-section="orders">
+                    <i class="fas fa-clipboard-list"></i> Đơn hàng
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content">
+            <!-- Profile Section -->
+            <section id="profile" class="content-section active">
+                <div class="section-header">
+                    <h2><i class="fas fa-user"></i> Thông tin cá nhân</h2>
+                    <button class="btn-edit" id="editProfileBtn">
+                        <i class="fas fa-edit"></i> Chỉnh sửa
+                    </button>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-image-section">
+                        <div class="profile-image">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&h=200&fit=crop&crop=face" alt="Profile" id="profileImage">
+                            <div class="image-overlay" id="imageOverlay">
+                                <i class="fas fa-camera"></i>
+                                <span>Đổi ảnh</span>
+                            </div>
+                        </div>
+                        <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                    </div>
+
+                    <div class="profile-info">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Họ và tên</label>
+                                <div class="input-group">
+                                    <input type="text" id="fullName" value="Nguyễn Thị Lan" readonly>
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <label>Email</label>
+                                <div class="input-group">
+                                    <input type="email" id="email" value="lan.nguyen@email.com" readonly>
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <label>Số điện thoại</label>
+                                <div class="input-group">
+                                    <input type="tel" id="phone" value="0123 456 789" readonly>
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <label>Ngày sinh</label>
+                                <div class="input-group">
+                                    <input type="date" id="birthDate" value="1990-05-15" readonly>
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                            </div>
+                            <div class="info-item full-width">
+                                <label>Địa chỉ</label>
+                                <div class="input-group">
+                                    <input type="text" id="address" value="123 Đường ABC, Quận 1, TP.HCM" readonly>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons" id="profileActions" style="display: none;">
+                            <button class="btn-save" id="saveProfileBtn">
+                                <i class="fas fa-save"></i> Lưu thay đổi
+                            </button>
+                            <button class="btn-cancel" id="cancelProfileBtn">
+                                <i class="fas fa-times"></i> Hủy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cart Section -->
+            <section id="cart" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-shopping-cart"></i> Giỏ hàng của tôi</h2>
+                    <span class="item-count">3 sản phẩm</span>
+                </div>
+
+                <div class="cart-container">
+                    <!-- <div class="cart-items">
+                        <div class="cart-item">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100&h=100&fit=crop" alt="Product">
+                            </div>
+                            <div class="item-details">
+                                <h4>Đồng hồ thông minh Apple Watch</h4>
+                                <p class="item-description">Series 9, 45mm, GPS + Cellular</p>
+                                <div class="item-price">12,990,000₫</div>
+                            </div>
+                            <div class="item-quantity">
+                                <button class="qty-btn minus" data-action="decrease">-</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn plus" data-action="increase">+</button>
+                            </div>
+                            <div class="item-total">12,990,000₫</div>
+                            <button class="remove-item"><i class="fas fa-trash"></i></button>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=100&h=100&fit=crop" alt="Product">
+                            </div>
+                            <div class="item-details">
+                                <h4>Túi xách Louis Vuitton</h4>
+                                <p class="item-description">Neverfull MM, Monogram Canvas</p>
+                                <div class="item-price">45,000,000₫</div>
+                            </div>
+                            <div class="item-quantity">
+                                <button class="qty-btn minus" data-action="decrease">-</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn plus" data-action="increase">+</button>
+                            </div>
+                            <div class="item-total">45,000,000₫</div>
+                            <button class="remove-item"><i class="fas fa-trash"></i></button>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=100&h=100&fit=crop" alt="Product">
+                            </div>
+                            <div class="item-details">
+                                <h4>Giày thể thao Nike Air Jordan</h4>
+                                <p class="item-description">Size 38, Màu trắng</p>
+                                <div class="item-price">8,500,000₫</div>
+                            </div>
+                            <div class="item-quantity">
+                                <button class="qty-btn minus" data-action="decrease">-</button>
+                                <span class="qty-value">2</span>
+                                <button class="qty-btn plus" data-action="increase">+</button>
+                            </div>
+                            <div class="item-total">17,000,000₫</div>
+                            <button class="remove-item"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div> -->
+                    <!-- <div class="cart-summary">
+                        <h3>Tóm tắt đơn hàng</h3>
+                        <div class="summary-row">
+                            <span>Tạm tính:</span>
+                            <span id="subtotal">74,990,000₫</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Phí vận chuyển:</span>
+                            <span>Miễn phí</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Giảm giá:</span>
+                            <span class="discount">-2,000,000₫</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Tổng cộng:</span>
+                            <span id="total">72,990,000₫</span>
+                        </div>
+                        <button class="btn-checkout">
+                            <i class="fas fa-credit-card"></i> Thanh toán
+                        </button>
+                    </div> -->
+
+        <div class="cart-box" id="cartBox">
+            <ul class="cart-box-ul">
+                <h4 class="cart-h4">Giỏ hàng của bạn</h4>
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items sẽ được render ở đây -->
+                </div>
+                
+                <div class="cart-total" id="cartTotal" style="display: none;">
+                    <div>Tổng cộng: <span id="totalAmount">$0</span></div>
+                </div>
+            </ul>
+
+            <div class="cart-btn-group">
+                <button class="btn btn-secondary" onclick="clearCart()">Xóa tất cả</button>
+                <button class="btn btn-primary" onclick="checkout()">Thanh toán</button>
+            </div>
+        </div>
+    </header>
+
+               
+               
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="orders" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-clipboard-list"></i> Lịch sử đơn hàng</h2>
+                    <div class="order-filters">
+                        <select id="orderFilter">
+                            <option value="all">Tất cả</option>
+                            <option value="pending">Chờ xử lý</option>
+                            <option value="shipping">Đang giao</option>
+                            <option value="completed">Hoàn thành</option>
+                            <option value="cancelled">Đã hủy</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="orders-container">
+                    <!-- <div class="order-card">
+                        <div class="order-header">
+                            <div class="order-info">
+                                <h4>Đơn hàng #DH001234</h4>
+                                <span class="order-date">15/01/2024</span>
+                            </div>
+                            <span class="order-status completed">Hoàn thành</span>
+                        </div>
+                        <div class="order-items">
+                            <div class="order-item">
+                                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=60&h=60&fit=crop" alt="Product">
+                                <div class="item-info">
+                                    <h5>Đồng hồ thông minh Apple Watch</h5>
+                                    <p>Số lượng: 1</p>
+                                </div>
+                                <div class="item-price">12,990,000₫</div>
+                            </div>
+                        </div>
+                        <div class="order-footer">
+                            <div class="order-total">Tổng: 12,990,000₫</div>
+                            <div class="order-actions">
+                                <button class="btn-view">Xem chi tiết</button>
+                                <button class="btn-reorder">Mua lại</button>
+                            </div>
+                        </div>
+                    </div> -->
+<!-- 
+                    <div class="order-card">
+                        <div class="order-header">
+                            <div class="order-info">
+                                <h4>Đơn hàng #DH001235</h4>
+                                <span class="order-date">20/01/2024</span>
+                            </div>
+                            <span class="order-status shipping">Đang giao</span>
+                        </div>
+                        <div class="order-items">
+                            <div class="order-item">
+                                <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=60&h=60&fit=crop" alt="Product">
+                                <div class="item-info">
+                                    <h5>Túi xách Louis Vuitton</h5>
+                                    <p>Số lượng: 1</p>
+                                </div>
+                                <div class="item-price">45,000,000₫</div>
+                            </div>
+                        </div>
+                        <div class="order-footer">
+                            <div class="order-total">Tổng: 45,000,000₫</div>
+                            <div class="order-actions">
+                                <button class="btn-view">Xem chi tiết</button>
+                                <button class="btn-track">Theo dõi</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-header">
+                            <div class="order-info">
+                                <h4>Đơn hàng #DH001236</h4>
+                                <span class="order-date">25/01/2024</span>
+                            </div>
+                            <span class="order-status pending">Chờ xử lý</span>
+                        </div>
+                        <div class="order-items">
+                            <div class="order-item">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=60&fit=crop" alt="Product">
+                                <div class="item-info">
+                                    <h5>Giày thể thao Nike Air Jordan</h5>
+                                    <p>Số lượng: 2</p>
+                                </div>
+                                <div class="item-price">17,000,000₫</div>
+                            </div>
+                        </div>
+                        <div class="order-footer">
+                            <div class="order-total">Tổng: 17,000,000₫</div>
+                            <div class="order-actions">
+                                <button class="btn-view">Xem chi tiết</button>
+                                <button class="btn-cancel">Hủy đơn</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-cog"></i> Cài đặt tài khoản</h2>
+                </div>
+
+                <div class="settings-container">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-lock"></i> Bảo mật</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Đổi mật khẩu</h4>
+                                <p>Cập nhật mật khẩu để bảo vệ tài khoản</p>
+                            </div>
+                            <button class="btn-setting">Đổi mật khẩu</button>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Xác thực 2 bước</h4>
+                                <p>Tăng cường bảo mật với xác thực 2 bước</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class="fas fa-bell"></i> Thông báo</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Email thông báo</h4>
+                                <p>Nhận thông báo qua email</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>SMS thông báo</h4>
+                                <p>Nhận thông báo qua SMS</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class="fas fa-palette"></i> Giao diện</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Chế độ tối</h4>
+                                <p>Chuyển sang giao diện tối</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="darkModeToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Thành công!</span>
+    </div>
+
+    <script src="./assets/js/account.js"></script>
+        <script src="./assets/js//menu_food.js"></script>
+    <script src="./assets/js/foodhub.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

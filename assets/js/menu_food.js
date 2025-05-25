@@ -81,47 +81,47 @@ const menuData = [
         category: "coffee",
         rating: 4,
         isVegan: false
-    },
-    {
+    },  {
         id: 9,
-        name: "Phở Bò Đặc Biệt",
-        price: 13,
-        description: "Phở bò truyền thống với nước dùng trong, thịt bò tái và các loại rau thơm.",
-        image: "/assets/images/MOCHI GẠO LỨT NHÂN ĐẬU ĐỎ.png",
-        category: "main",
+        name: "Cà phê Việt Nam",
+        price: 8,
+        description: "Cà phê phin truyền thống với sữa đặc, hương vị đậm đà khó quên.",
+        image: "/assets/images/menu5.jpg",
+        category: "coffee",
         rating: 5,
         isVegan: false
     },
     {
         id: 10,
-        name: "Buddha Bowl",
-        price: 11,
-        description: "Bát chay đầy màu sắc với quinoa, khoai lang nướng, brokocli và hummus.",
-        image: "/assets/images/CHẢ LÁ LỐT.jpg",
-        category: "vegan",
-        rating: 4,
-        isVegan: true
-    },
-    {
-        id: 11,
-        name: "Maki Set Deluxe",
-        price: 18,
-        description: "Set maki cao cấp gồm 24 miếng với các loại cá tươi ngon nhất.",
-        image: "/assets/images/BÁNH QUY ĂN THEO PT.jpg",
+        name: "Sushi Rainbow Roll",
+        price: 16,
+        description: "Sushi cuộn cầu vồng với cá hồi, cá ngừ, bơ và dấm rice đặc biệt.",
+        image: "/assets/images/food1.png",
         category: "sushi",
         rating: 5,
         isVegan: false
     },
     {
-        id: 12,
-        name: "Smoothie Bowl Nhiệt Đới",
-        price: 9,
-        description: "Smoothie bowl với xoài, dừa, granola và các loại hạt dinh dưỡng.",
-        image: "/assets/images/3. Bánh Cuốn Hạt Gai Dầu (Hemp Seed) với Nhân Rau Củ Fermented.jpg",
+        id: 11,
+        name: "Salad Quinoa Chay",
+        price: 10,
+        description: "Salad quinoa với rau củ tươi, hạt chia và sốt tahini tự nhiên.",
+        image: "/assets/images/food2.png",
         category: "vegan",
         rating: 4,
         isVegan: true
-    }
+    },
+    {
+        id: 12,
+        name: "Trà Sữa Thái Xanh",
+        price: 6,
+        description: "Trà sữa Thái xanh thơm ngon với topping trân châu đen.",
+        image: "/assets/images/food3.png",
+        category: "coffee",
+        rating: 4,
+        isVegan: false
+    },
+    
 ];
 
 // Biến toàn cục

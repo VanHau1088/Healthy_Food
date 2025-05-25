@@ -328,7 +328,7 @@ p.product-price {
 
 .header {
     text-align: center;
-    /* margin-bottom: 40px; */
+    margin-bottom: 40px;
         margin-top: 10%;
     color: white;
 }
@@ -342,6 +342,7 @@ p.product-price {
 .header p {
     font-size: 1.2rem;
     opacity: 0.9;
+    color: black
 }
 
 .menu-controls {
@@ -411,7 +412,7 @@ p.product-price {
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-bottom: 40px;
 }
@@ -643,5 +644,6 @@ p.product-price {
 
     .main-heading {
         font-size: 1.8rem;
+        margin: 33% 0px 0px 0px;
     }
 }
