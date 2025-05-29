@@ -2,6 +2,7 @@
 
 
 const menuData = [
+    // Món chính
     {
         id: 1,
         name: "Mì Udon Kiểu Nhật Xốt Kem Nấm & Tôm Tươi",
@@ -52,6 +53,7 @@ const menuData = [
         rating: 5,
         isVegan: false
     },
+  // Món phụ
     {
         id: 6,
         name: "Chả lá lốt yến mạch - đậu lăng",
@@ -101,6 +103,7 @@ const menuData = [
         rating: 5,
         isVegan: true
     },
+     // Món tráng miệng
     {
         id: 11,
         name: "Salad Quinoa Chay & sốt tahnini",
@@ -137,7 +140,7 @@ const menuData = [
         price: 14,
         description: "Bơ (1/2 quả), cacao nguyên chất (5g), hạnh nhân (10g), sữa hạnh nhân không đường (100ml).",
         image: "/assets/images/menu2.jpg",
-        category: "main",
+        category: "vegan",
         rating: 5,
         isVegan: false
     },
@@ -147,7 +150,7 @@ const menuData = [
         price: 9,
         description: "Yến mạch, chuối chín, trứng, mật ong/đường ăn kiêng, bột nở, hạt óc chó/hạnh nhân",
         image: "/assets/images/menu3.jpg",
-        category: "main",
+        category: "vegan",
         rating: 5,
         isVegan: true
     },
@@ -157,17 +160,18 @@ const menuData = [
         price: 12,
         description: "Sữa chua Hy Lạp (100g), dâu tây (30g), việt quất (20g).",
         image: "/assets/images/menu2.jpg",
-        category: "main",
+        category: "vegan",
         rating: 4,
         isVegan: false
     },
+    // Đồ uống
     {
         id: 17,
         name: "Nước ép Xanh Detox",
         price: 8,
         description: "Cần tây, cải bó xôi, táo xanh, dưa chuột, gừng, một chút chanh tươi.",
         image: "/assets/images/menu5.jpg",
-        category: "main",
+        category: "coffee",
         rating: 5,
         isVegan: false
     },
@@ -177,7 +181,7 @@ const menuData = [
         price: 16,
         description: "Cam vàng (50g), chanh vàng (10g), bạc hà, mật ong (5ml), nước lọc",
         image: "/assets/images/food1.png",
-        category: "side",
+        category: "coffee",
         rating: 5,
         isVegan: false
     },
@@ -187,7 +191,7 @@ const menuData = [
         price: 10,
         description: "Bột matcha (5g), nước trà sen ủ lạnh, sữa hạnh nhân không đường (100ml).",
         image: "/assets/images/food2.png",
-        category: "side",
+        category: "coffee",
         rating: 4,
         isVegan: false
     },
@@ -197,16 +201,17 @@ const menuData = [
         price: 6,
         description: "Trà Kombucha nguyên bản, puree đào tươi, hạt chia. (Không thêm đường hoặc rất ít đường ăn kiêng nếu cần).",
         image: "/assets/images/food3.png",
-        category: "side",
+        category: "coffee",
         rating: 4,
         isVegan: false
-    },  {
+    },  
+    {
         id: 21,
         name: "Sữa Hạt Hạnh Nhân & Hạt Điều Không Đường",
         price: 8,
         description: "Hạt hạnh nhân, hạt điều, nước lọc, một chút muối hồng.",
         image: "/assets/images/menu5.jpg",
-        category: "side",
+        category: "coffee",
         rating: 5,
         isVegan: false
     },
@@ -216,7 +221,7 @@ const menuData = [
         price: 16,
         description: "Hoa đậu biếc khô, chanh dây tươi, nước lọc. (Có thể thêm chút mật ong/đường ăn kiêng).",
         image: "/assets/images/food1.png",
-        category: "side",
+        category: "coffee",
         rating: 5,
         isVegan: false
     },
@@ -226,7 +231,7 @@ const menuData = [
         price: 10,
         description: "Cà phê Cold Brew (100% Arabica), nước dừa tươi",
         image: "/assets/images/food2.png",
-        category: "vegan",
+        category: "coffee",
         rating: 4,
         isVegan: false
     },
@@ -246,7 +251,7 @@ const menuData = [
         price: 10,
         description: "Dưa gang ngọt mát kết hợp sữa hạt dẻ cười béo thơm, điểm xuyết hạt chia, tạo trải nghiệm uống sang trọng, không giống bất kỳ sinh tố nào.",
         image: "/assets/images/food2.png",
-        category: "vegan",
+        category: "coffee",
         rating: 4,
         isVegan: true
     },
