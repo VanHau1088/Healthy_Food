@@ -285,7 +285,8 @@ p.product-price {
 }
 
 .btn-secondary:hover {
-    background: #e9ecef;
+    background: var(--saffron);
+
 }
 
 .btn-primary {
@@ -406,7 +407,8 @@ p.product-price {
 }
 
 .filter-btn.active {
-    background: var(--saffron);
+    /* background: var(--saffron); */
+    background: #113e21;
     color: white;
 }
 
@@ -472,16 +474,18 @@ p.product-price {
 }
 
 .menu-item-name {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #2c3e50;
 }
 
 .menu-item-price {
-    background: linear-gradient(135deg, #f39c12, #e67e22);
+    /* background: linear-gradient(135deg, #f39c12, #e67e22); */
+    /* background: #B38B59; */
+    background: #113e21;
     color: white;
     padding: 8px 16px;
-    border-radius: 20px;
+    border-radius: 5px;
     font-weight: bold;
     font-size: 1.1rem;
 }
@@ -506,11 +510,12 @@ p.product-price {
 .add-to-cart {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, var(--saffron), #655707);
+    /* background: linear-gradient(135deg, var(--saffron), #655707); */
+    background: #B38B59;
     
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;

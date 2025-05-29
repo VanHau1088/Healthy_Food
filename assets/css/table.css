@@ -145,8 +145,8 @@
         }
 
         .status-available {
-            background: #27ae60;
-            color: white;
+            background: #113e21;
+            color: #fefefe;
         }
 
         .status-occupied {
@@ -197,7 +197,8 @@
         .book-button {
             width: 100%;
             padding: 12px;
-            background: linear-gradient(135deg, var(--saffron), #655707);
+            /* background: linear-gradient(135deg, var(--saffron), #655707); */
+            background: #B38B59;
             color: white;
             border: none;
             border-radius: 10px;
@@ -244,8 +245,9 @@
 
         .modal-header {
             padding: 2rem;
-            background: linear-gradient(45deg, #d4af37, #f4d03f);
-            color: #1a1a1a;
+            /* background: linear-gradient(45deg, #d4af37, #f4d03f); */
+            background: #B38B59;
+            color: #fefefe;
             border-radius: 15px 15px 0 0;
         }
 
@@ -345,7 +347,7 @@
         }
 
         .submit-booking {
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            background: #113e21;
             color: white;
             border: none;
             padding: 15px 30px;

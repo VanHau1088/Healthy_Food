@@ -2,140 +2,136 @@
         const tablesData = [
             {
                 id: 1,
-                name: "Bàn VIP 1",
+                name: "Bàn VIP ",
                 status: "available",
                 capacity: "2-4 người",
                 location: "Tầng 1 - Khu vực riêng tư",
                 price: "500.000 VNĐ",
                 description: "Bàn VIP với view đẹp, không gian riêng tư, phù hợp cho các buổi hẹn hò lãng mạn.",
                 features: ["View sông", "Không gian riêng tư", "Âm nhạc nhẹ nhàng", "Trang trí hoa tươi"],
-                mainImage: "./assets/images/3. Bánh Cuốn Hạt Gai Dầu (Hemp Seed) với Nhân Rau Củ Fermented.jpg",
+                mainImage: "./assets/images/banvip.jpg",
                 gallery: [
-                    "./assets/images/about-image.jpg",
-                    "./assets/images/BÁNH QUY ĂN THEO PT.jpg",
-                    "./assets/images/CHẢ LÁ LỐT.jpg",
-                    "./assets/images/BÁNH QUY ĂN THEO PT.jpg",
+                    "./assets/images/banvip1.jpg",
+                    "./assets/images/banvip2.jpg",
+                    "./assets/images/banvip3.jpg",
                 ]
             },
             {
                 id: 2,
-                name: "Bàn Gia Đình 1",
+                name: "Bàn Gia Đình ",
                 status: "occupied",
                 capacity: "6-8 người",
                 location: "Tầng 1 - Khu vực chính",
                 price: "800.000 VNĐ",
                 description: "Bàn rộng rãi dành cho gia đình, nhóm bạn với không gian thoải mái.",
                 features: ["Bàn tròn lớn", "Ghế êm ái", "Gần khu vui chơi trẻ em", "Menu trẻ em"],
-                mainImage: "/placeholder.svg?height=200&width=300",
+                mainImage: "/assets/images/bangiadinh.jpg",
                 gallery: [
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200"
+                    "/assets/images/bangiadinh.jpg" ,
+                    "/assets/images/bangiadinh.jpg" 
                 ]
             },
             {
                 id: 3,
-                name: "Bàn Sân Vườn 1",
-                status: "available",
+                name: "Bàn Sân Vườn ",
+                status: "reserved",
                 capacity: "4-6 người",
                 location: "Sân vườn - Ngoài trời",
                 price: "600.000 VNĐ",
                 description: "Bàn ngoài trời trong khu vườn xanh mát, không khí trong lành.",
                 features: ["Không gian mở", "Cây xanh", "Ánh sáng tự nhiên", "Phù hợp chụp ảnh"],
-                mainImage: "/placeholder.svg?height=200&width=300",
+                mainImage: "/assets/images/bansanvuon.jpg",
                 gallery: [
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200"
+                    "/assets/images/bansanvuon1.jpg" ,
+                    "/assets/images/bansanvuon2.jpg" ,
+                    "/assets/images/bansanvuon3.jpg" 
                 ]
             },
-            {
-                id: 4,
-                name: "Bàn VIP 2",
-                status: "reserved",
-                capacity: "2-4 người",
-                location: "Tầng 2 - Phòng riêng",
-                price: "700.000 VNĐ",
-                description: "Phòng riêng cao cấp với dịch vụ butler, phù hợp cho các dịp đặc biệt.",
-                features: ["Phòng riêng", "Dịch vụ butler", "Karaoke", "Minibar"],
-                mainImage: "/placeholder.svg?height=200&width=300",
-                gallery: [
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200"
-                ]
-            },
-            {
-                id: 5,
-                name: "Bàn Thường 1",
-                status: "available",
-                capacity: "2-4 người",
-                location: "Tầng 1 - Khu vực chính",
-                price: "300.000 VNĐ",
-                description: "Bàn tiêu chuẩn với chất lượng dịch vụ tốt, giá cả hợp lý.",
-                features: ["Vị trí trung tâm", "Dễ di chuyển", "Phù hợp mọi lứa tuổi", "Menu đa dạng"],
-                mainImage: "/placeholder.svg?height=200&width=300",
-                gallery: [
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200"
-                ]
-            },
-            {
-                id: 6,
-                name: "Bàn Bar",
-                status: "available",
-                capacity: "2-3 người",
-                location: "Khu vực Bar - Tầng 1",
-                price: "400.000 VNĐ",
-                description: "Bàn cao tại quầy bar, phù hợp cho những ai thích không gian sôi động.",
-                features: ["Quầy bar", "Cocktail đặc biệt", "Nhạc sống", "View pha chế"],
-                mainImage: "/placeholder.svg?height=200&width=300",
-                gallery: [
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200"
-                ]
-            },
-            {
-                id: 7,
-                name: "Bàn Sân Thượng",
-                status: "available",
-                capacity: "4-6 người",
-                location: "Sân thượng - Tầng 3",
-                price: "900.000 VNĐ",
-                description: "Bàn trên sân thượng với view toàn cảnh thành phố, lý tưởng cho buổi tối.",
-                features: ["View thành phố", "Không gian mở", "Ánh sáng đèn trang trí", "Gió mát"],
-                mainImage: "/placeholder.svg?height=200&width=300",
-                gallery: [
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200"
-                ]
-            },
-            {
-                id: 8,
-                name: "Bàn Gia Đình 2",
-                status: "available",
-                capacity: "8-10 người",
-                location: "Tầng 2 - Phòng lớn",
-                price: "1.200.000 VNĐ",
-                description: "Phòng lớn dành cho các buổi tiệc gia đình, sinh nhật, kỷ niệm.",
-                features: ["Phòng riêng lớn", "Trang trí theo yêu cầu", "Âm thanh chuyên nghiệp", "Menu tiệc"],
-                mainImage: "/placeholder.svg?height=200&width=300",
-                gallery: [
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200",
-                    "/placeholder.svg?height=150&width=200"
-                ]
-            }
+            // {
+            //     id: 4,
+            //     name: "Bàn VIP 2",
+            //     status: "reserved",
+            //     capacity: "2-4 người",
+            //     location: "Tầng 2 - Phòng riêng",
+            //     price: "700.000 VNĐ",
+            //     description: "Phòng riêng cao cấp với dịch vụ butler, phù hợp cho các dịp đặc biệt.",
+            //     features: ["Phòng riêng", "Dịch vụ butler", "Karaoke", "Minibar"],
+            //     mainImage: "/placeholder.svg?height=200&width=300",
+            //     gallery: [
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200"
+            //     ]
+            // },
+            // {
+            //     id: 5,
+            //     name: "Bàn Thường 1",
+            //     status: "available",
+            //     capacity: "2-4 người",
+            //     location: "Tầng 1 - Khu vực chính",
+            //     price: "300.000 VNĐ",
+            //     description: "Bàn tiêu chuẩn với chất lượng dịch vụ tốt, giá cả hợp lý.",
+            //     features: ["Vị trí trung tâm", "Dễ di chuyển", "Phù hợp mọi lứa tuổi", "Menu đa dạng"],
+            //     mainImage: "/placeholder.svg?height=200&width=300",
+            //     gallery: [
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200"
+            //     ]
+            // },
+            // {
+            //     id: 6,
+            //     name: "Bàn Bar",
+            //     status: "available",
+            //     capacity: "2-3 người",
+            //     location: "Khu vực Bar - Tầng 1",
+            //     price: "400.000 VNĐ",
+            //     description: "Bàn cao tại quầy bar, phù hợp cho những ai thích không gian sôi động.",
+            //     features: ["Quầy bar", "Cocktail đặc biệt", "Nhạc sống", "View pha chế"],
+            //     mainImage: "/placeholder.svg?height=200&width=300",
+            //     gallery: [
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200"
+            //     ]
+            // },
+            // {
+            //     id: 7,
+            //     name: "Bàn Sân Thượng",
+            //     status: "available",
+            //     capacity: "4-6 người",
+            //     location: "Sân thượng - Tầng 3",
+            //     price: "900.000 VNĐ",
+            //     description: "Bàn trên sân thượng với view toàn cảnh thành phố, lý tưởng cho buổi tối.",
+            //     features: ["View thành phố", "Không gian mở", "Ánh sáng đèn trang trí", "Gió mát"],
+            //     mainImage: "/placeholder.svg?height=200&width=300",
+            //     gallery: [
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200"
+            //     ]
+            // },
+            // {
+            //     id: 8,
+            //     name: "Bàn Gia Đình 2",
+            //     status: "available",
+            //     capacity: "8-10 người",
+            //     location: "Tầng 2 - Phòng lớn",
+            //     price: "1.200.000 VNĐ",
+            //     description: "Phòng lớn dành cho các buổi tiệc gia đình, sinh nhật, kỷ niệm.",
+            //     features: ["Phòng riêng lớn", "Trang trí theo yêu cầu", "Âm thanh chuyên nghiệp", "Menu tiệc"],
+            //     mainImage: "/placeholder.svg?height=200&width=300",
+            //     gallery: [
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200",
+            //         "/placeholder.svg?height=150&width=200"
+            //     ]
+            // }
         ];
 
         // Generate tables
