@@ -269,7 +269,7 @@ html {
 }
 
 .menu-toggle-btn .line {
-  background: var(--space-cadet);
+  background: #B38B59;
   width: 20px;
   height: 2px;
   border-radius: 2px;
