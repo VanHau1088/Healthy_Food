@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Tư Vấn Sức Khỏe</title>
+    <link rel="stylesheet" href="./assets/css/chatbox.css">
+    <link rel="icon" href="./assets/images/circle.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/foodhub.css">
+    <link rel="stylesheet" href="./assets/css/media_query.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="navbar-wrapper">
+                <a href="/index.html">
+                    <!-- <img src="./assets/images/logo.svg" alt="logo" width="130"> -->
+                       <img src="./assets/images/2.jpg" alt="logo" width="130" >
+                </a>
+
+                <ul class="navbar-nav">
+                    <li><a href="./index.html" class="nav-link">Trang chủ</a></li>
+                    <li><a href="/table.html" class="nav-link">Đặt bàn</a></li>
+                    <li><a href="/menu.html" class="nav-link">Thực đơn</a></li>
+                </ul>
+
+                <div class="navbar-btn-group">
+                  <a href="./menu.html">
+                    <button class="shopping-cart-btn" onclick="toggleCart()">
+                        <img src="./assets/images/cart.svg" alt="shopping cart icon" width="18">
+                    </button>
+                  </a>
+
+                  <a href="./account.html">
+                    <button class="shopping-cart-btn">
+                        <img src="./assets/images/user.png" alt="account user icon" width="18">
+                    </button>
+                  </a>
+
+                    <button class="menu-toggle-btn">
+                        <span class="line one"></span>
+                        <span class="line two"></span>
+                        <span class="line three"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cart-box" id="cartBox">
+            <ul class="cart-box-ul">
+                <h4 class="cart-h4">Giỏ hàng của bạn</h4>
+                </div> 
+                
+              
+            </ul>
+
+        
+        </div>
+    </header>
+
+    <br>
+    <br><br><br><br><br>
+
+
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h1>🏥 Chatbot Tư Vấn Sức Khỏe </h1>
+            <p>Tư vấn dinh dưỡng và sức khỏe với Bác sĩ AI</p>
+        </div>
+
+        <div class="disclaimer">
+            ⚠️ <strong>Lưu ý:</strong> Thông tin chỉ mang tính chất tham khảo. Hãy tham khảo ý kiến bác sĩ cho chẩn đoán chính xác.
+        </div>
+
+        <div class="quick-questions">
+            <div class="quick-question" onclick="sendQuickQuestion('Thực đơn giảm cân cho người béo phì')">🍽️ Thực đơn giảm cân</div>
+            <div class="quick-question" onclick="sendQuickQuestion('Cách tăng cường miễn dịch')">💪 Tăng miễn dịch</div>
+            <div class="quick-question" onclick="sendQuickQuestion('Chế độ ăn cho người tiểu đường')">🍎 Chế độ ăn tiểu đường</div>
+            <div class="quick-question" onclick="sendQuickQuestion('Thực phẩm tốt cho tim mạch')">❤️ Tốt cho tim</div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-content">
+                    Xin chào! Tôi là chatbot tư vấn sức khỏe được hỗ trợ bởi Google Gemini AI. Tôi có thể giúp bạn:
+                    <br>• Tư vấn chế độ dinh dưỡng cá nhân hóa
+                    <br>• Gợi ý thực đơn healthy theo mục tiêu
+                    <br>• Hướng dẫn lối sống lành mạnh
+                    <br>• Thông tin về các bệnh lý và phòng ngừa
+                    <br>• Tư vấn bổ sung vitamin và khoáng chất
+                    <br><br>Hãy hỏi tôi bất cứ điều gì về sức khỏe nhé! 🌟
+                </div>
+            </div>
+        </div>
+        
+        <div class="typing-indicator" id="typingIndicator">
+            Đang trả lời <span class="typing-dots"><span>.</span><span>.</span><span>.</span></span>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Nhập câu hỏi về sức khỏe..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()" id="sendBtn">Gửi</button>
+        </div>
+    </div>
+
+
+     <footer>
+
+      <div class="footer-wrapper">
+
+        <a href="#">
+          <img src="./assets/images/2.jpg" alt="logo" class="footer-brand" width="130">
+        </a>
+
+        <div class="social-link">
+
+          <a href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+
+          <a href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+
+          <a href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+
+          <a href="#">
+            <ion-icon name="logo-youtube"></ion-icon>
+          </a>
+
+        </div>
+
+        <p class="copyright">&copy; Copyright 2022 codewithsadee. All Rights Reserved.</p>
+
+      </div>
+
+    </footer>
+
+
+    <script src="./assets/js/chatbox.js"></script>
+    <script src="./assets/js/foodhub.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
