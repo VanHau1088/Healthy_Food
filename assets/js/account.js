@@ -37,7 +37,162 @@
             
             // Update storage info
             updateStorageInfo();
+
         });
+
+    // Load giỏ hàng từ localStorage
+        // Load giỏ hàng từ localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCartFromStorage();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBookingInfo();
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            loadOrderHistory();
+        });
+
+
+
+// Tải giỏ hàng từ localStorage và hiển thị
+function loadCartFromStorage() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    const totalAmountSpan = document.getElementById('totalAmount');
+
+    let cart = localStorage.getItem('foodhubCart');
+    if (!cart) {
+        cartItemsContainer.innerHTML = "<p>Giỏ hàng của bạn đang trống</p>";
+        return;
+    }
+    
+    cart = JSON.parse(cart);
+    let total = 0;
+
+    cartItemsContainer.innerHTML = cart.map(item => `
+        <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}" width="50">
+            <p>${item.name} - $${item.price} x ${item.quantity}</p>
+        </div>
+    `).join('');
+
+    total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    totalAmountSpan.textContent = `$${total.toFixed(2)}`;
+}
+
+// Thanh toán
+
+function checkout() {
+    let cart = JSON.parse(localStorage.getItem('foodhubCart')) || [];
+
+    console.log("Dữ liệu giỏ hàng:", cart); // Kiểm tra trong Console
+
+    if (cart.length === 0) {
+        alert("Giỏ hàng trống! Vui lòng thêm sản phẩm trước khi thanh toán.");
+        return;
+    }
+
+    if (!confirm("Xác nhận thanh toán?")) return;
+
+    let orders = JSON.parse(localStorage.getItem('orderHistory')) || [];
+    orders.push({
+        orderId: Date.now(),
+        items: cart,
+        orderDate: new Date().toLocaleString(),
+        status: "Đã đặt"
+    });
+
+    console.log("Dữ liệu đơn hàng trước khi lưu:", orders); // Kiểm tra trước khi lưu
+
+    localStorage.setItem('orderHistory', JSON.stringify(orders));
+
+    // Xóa giỏ hàng
+    localStorage.removeItem('foodhubCart');
+    loadCartFromStorage();
+
+    alert("Đơn hàng đã được tạo thành công!");
+}
+
+
+
+// Đơn hàng 
+function loadOrderHistory() {
+    const orderContainer = document.getElementById('orderHistory');
+    let orders = JSON.parse(localStorage.getItem('orderHistory')) || [];
+
+    if (orders.length === 0) {
+        orderContainer.innerHTML = "<p>Bạn chưa có đơn hàng nào.</p>";
+        return;
+    }
+
+    orderContainer.innerHTML = orders.map(order => `
+        <div class="order-card">
+            <h3>🛍 Đơn hàng #${order.orderId}</h3>
+            <ul>
+                ${order.items.map(item => `
+                    <li>
+                        <img src="${item.image}" alt="${item.name}" width="60">
+                        ${item.name} - $${item.price} x ${item.quantity}
+                    </li>
+                `).join('')}
+            </ul>
+            <p><strong>Ngày đặt:</strong> ${order.orderDate}</p>
+            <p><strong>Trạng thái:</strong> ${order.status}</p>
+        </div>
+    `).join('');
+}
+
+
+
+
+// Đặt bàn
+function loadBookingInfo() {
+    const bookingContainer = document.getElementById('bookingInfo');
+    let bookings = JSON.parse(localStorage.getItem('bookingInfo')) || [];
+
+    if (bookings.length === 0) {
+        bookingContainer.innerHTML = "<p>Chưa có bàn nào được đặt.</p>";
+        return;
+    }
+
+    // Hiển thị danh sách các bàn đã đặt
+    bookingContainer.innerHTML = bookings.map(booking => `
+        <div class="booking-card">
+            <img src="${booking.tableImage}" alt="${booking.tableName}">
+            <div class="booking-details">
+                <h3>${booking.tableName}</h3>
+                <p><strong>Khách hàng:</strong> ${booking.customerName}</p>
+                <p><strong>Ngày đặt:</strong> ${booking.bookingDate}</p>
+                <p><strong>Giờ đặt:</strong> ${booking.bookingTime}</p>
+                <p><strong>Số khách:</strong> ${booking.guestCount}</p>
+                <p><strong>Yêu cầu:</strong> ${booking.specialRequests || "Không có"}</p>
+                <button class="delete-booking-btn" onclick="deleteBooking('${booking.tableId}')">Xóa bàn</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+
+function deleteBooking(tableId) {
+    if (confirm("Bạn có chắc muốn hủy đặt bàn?")) {
+        let bookings = JSON.parse(localStorage.getItem('bookingInfo')) || [];
+        // Xóa bàn có ID tương ứng
+        bookings = bookings.filter(booking => booking.tableId !== tableId);
+        // Cập nhật lại localStorage
+        localStorage.setItem('bookingInfo', JSON.stringify(bookings));
+        // Cập nhật giao diện
+        loadBookingInfo();
+        alert("Bàn đã được hủy!");
+    }
+}
+
+
+
+
+
+
+
 
         // Navigation
         function initializeNavigation() {
@@ -481,6 +636,8 @@
                 }, 150);
             }
         });
+
+
 
         // Smooth scrolling
         document.documentElement.style.scrollBehavior = 'smooth';

@@ -228,7 +228,7 @@
         }
 
         .btn-edit {
-            background: var(--primary-color);
+            background: #113e21;
             color: white;
             border: none;
             padding: 0.75rem 1.5rem;
@@ -239,7 +239,8 @@
         }
 
         .btn-edit:hover {
-            background: var(--primary-dark);
+            /* background: var(--primary-dark); */
+
             transform: translateY(-1px);
         }
 
@@ -554,7 +555,7 @@
 
         .btn-checkout {
             width: 100%;
-            background: var(--primary-color);
+                background: #113e21;
             color: white;
             border: none;
             padding: 1rem;
@@ -566,11 +567,11 @@
             margin-top: 1rem;
         }
 
-        .btn-checkout:hover {
+        /* .btn-checkout:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
-        }
+        } */
 
         /* Orders Section */
         .order-filters select {

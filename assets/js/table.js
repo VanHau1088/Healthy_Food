@@ -1,5 +1,5 @@
         // Table data
-        const tablesData = [
+const tablesData = [
             {
                 id: 1,
                 name: "Bàn VIP ",
@@ -47,91 +47,22 @@
                     "/assets/images/bansanvuon3.jpg" 
                 ]
             },
-            // {
-            //     id: 4,
-            //     name: "Bàn VIP 2",
-            //     status: "reserved",
-            //     capacity: "2-4 người",
-            //     location: "Tầng 2 - Phòng riêng",
-            //     price: "700.000 VNĐ",
-            //     description: "Phòng riêng cao cấp với dịch vụ butler, phù hợp cho các dịp đặc biệt.",
-            //     features: ["Phòng riêng", "Dịch vụ butler", "Karaoke", "Minibar"],
-            //     mainImage: "/placeholder.svg?height=200&width=300",
-            //     gallery: [
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200"
-            //     ]
-            // },
-            // {
-            //     id: 5,
-            //     name: "Bàn Thường 1",
-            //     status: "available",
-            //     capacity: "2-4 người",
-            //     location: "Tầng 1 - Khu vực chính",
-            //     price: "300.000 VNĐ",
-            //     description: "Bàn tiêu chuẩn với chất lượng dịch vụ tốt, giá cả hợp lý.",
-            //     features: ["Vị trí trung tâm", "Dễ di chuyển", "Phù hợp mọi lứa tuổi", "Menu đa dạng"],
-            //     mainImage: "/placeholder.svg?height=200&width=300",
-            //     gallery: [
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200"
-            //     ]
-            // },
-            // {
-            //     id: 6,
-            //     name: "Bàn Bar",
-            //     status: "available",
-            //     capacity: "2-3 người",
-            //     location: "Khu vực Bar - Tầng 1",
-            //     price: "400.000 VNĐ",
-            //     description: "Bàn cao tại quầy bar, phù hợp cho những ai thích không gian sôi động.",
-            //     features: ["Quầy bar", "Cocktail đặc biệt", "Nhạc sống", "View pha chế"],
-            //     mainImage: "/placeholder.svg?height=200&width=300",
-            //     gallery: [
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200"
-            //     ]
-            // },
-            // {
-            //     id: 7,
-            //     name: "Bàn Sân Thượng",
-            //     status: "available",
-            //     capacity: "4-6 người",
-            //     location: "Sân thượng - Tầng 3",
-            //     price: "900.000 VNĐ",
-            //     description: "Bàn trên sân thượng với view toàn cảnh thành phố, lý tưởng cho buổi tối.",
-            //     features: ["View thành phố", "Không gian mở", "Ánh sáng đèn trang trí", "Gió mát"],
-            //     mainImage: "/placeholder.svg?height=200&width=300",
-            //     gallery: [
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200"
-            //     ]
-            // },
-            // {
-            //     id: 8,
-            //     name: "Bàn Gia Đình 2",
-            //     status: "available",
-            //     capacity: "8-10 người",
-            //     location: "Tầng 2 - Phòng lớn",
-            //     price: "1.200.000 VNĐ",
-            //     description: "Phòng lớn dành cho các buổi tiệc gia đình, sinh nhật, kỷ niệm.",
-            //     features: ["Phòng riêng lớn", "Trang trí theo yêu cầu", "Âm thanh chuyên nghiệp", "Menu tiệc"],
-            //     mainImage: "/placeholder.svg?height=200&width=300",
-            //     gallery: [
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200",
-            //         "/placeholder.svg?height=150&width=200"
-            //     ]
-            // }
+            {
+                id: 4,
+                name: "Bàn Sân Vườn 2",
+                status: "available",
+                capacity: "4-6 người",
+                location: "Sân vườn - Ngoài trời",
+                price: "600.000 VNĐ",
+                description: "Bàn ngoài trời trong khu vườn xanh mát, không khí trong lành.",
+                features: ["Không gian mở", "Cây xanh", "Ánh sáng tự nhiên", "Phù hợp chụp ảnh"],
+                mainImage: "/assets/images/ChatGPT Image 00_16_12 27 thg 4, 2025.png",
+                gallery: [
+                    "/assets/images/ChatGPT Image 00_14_26 27 thg 4, 2025.png" ,
+                    "/assets/images/3.jpg" ,
+                    "/assets/images/bansanvuon3.jpg" 
+                ]
+            },
         ];
 
         // Generate tables
@@ -231,34 +162,46 @@
         }
 
         // Booking form submission
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const tableId = this.dataset.tableId;
-            const formData = new FormData(this);
-            
+            const table = tablesData.find(t => t.id == tableId);
+
             const bookingData = {
                 tableId: tableId,
-                tableName: tablesData.find(t => t.id == tableId).name,
+                tableName: table.name,
+                tableImage: table.mainImage,
                 customerName: document.getElementById('customerName').value,
-                customerPhone: document.getElementById('customerPhone').value,
                 bookingDate: document.getElementById('bookingDate').value,
                 bookingTime: document.getElementById('bookingTime').value,
                 guestCount: document.getElementById('guestCount').value,
-                specialRequests: document.getElementById('specialRequests').value
+                specialRequests: document.getElementById('specialRequests').value,
+                status: "reserved"
             };
 
-            // Simulate booking process
-            alert(`Đặt bàn thành công!\n\nThông tin đặt bàn:\n- Bàn: ${bookingData.tableName}\n- Khách hàng: ${bookingData.customerName}\n- Ngày: ${bookingData.bookingDate}\n- Giờ: ${bookingData.bookingTime}\n- Số khách: ${bookingData.guestCount}\n\nChúng tôi sẽ liên hệ với bạn để xác nhận trong vòng 15 phút.`);
-            
-            // Update table status to reserved
-            const table = tablesData.find(t => t.id == tableId);
-            table.status = 'reserved';
-            
-            // Regenerate tables and close modal
-            generateTables();
+            // Kiểm tra nếu `localStorage` có dữ liệu, nếu không thì khởi tạo là mảng rỗng
+            let bookings = JSON.parse(localStorage.getItem('bookingInfo')) || [];
+
+            // Đảm bảo `bookings` là mảng trước khi push
+            if (!Array.isArray(bookings)) {
+                bookings = []; // Nếu không phải mảng, khởi tạo lại
+            }
+
+            // Thêm bàn mới vào danh sách
+            bookings.push(bookingData);
+
+            // Lưu lại danh sách vào `localStorage`
+            localStorage.setItem('bookingInfo', JSON.stringify(bookings));
+            alert("Bàn đã được đặt thành công!");
+              // Cập nhật trạng thái bàn UI ngay lập tức
+            table.status = "reserved"; 
+             generateTables(); // Cập nhật lại danh sách bàn
             closeModal();
-        });
+});
+
+
+        
 
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
