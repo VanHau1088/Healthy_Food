@@ -2,269 +2,249 @@
 
 
 const menuData = [
-    // Món chính
+    // Bữa sáng
     {
         id: 1,
-        name: "Mì Udon Kiểu Nhật Xốt Kem Nấm & Tôm Tươi",
-        price: 11,
-        description: "Mì Udon, tôm tươi, nấm các loại, sữa hạt không đường, hành tây, tỏi, rau mùi tây",
-        image: "/assets/images/menu1.jpg",
+        name: "Bát Yến Mạch Đậm Vị Nhiệt Đới (Tropical Chia & Oat Bowl)",
+        price: 60.000,
+        description: "ến mạch, hạt chia, các loại trái cây nhiệt đới (như xoài, dứa, dừa), sữa hoặc nước cốt dừa, mật ong hoặc siro tự nhiên, hạt hạnh nhân hoặc các loại hạt khác, và đôi khi thêm hạt lanh tăng dinh dưỡng",
+        image: "/assets/images/unnamed (1).png",
         category: "main",
         rating: 5,
         isVegan: false,
     },
     {
         id: 2,
-        name: "Bún Rau Củ Tôm Hấp Mè Đen & nấm kim châm",
-        price: 14,
-        description: "Bún rau củ (100g), tôm hấp (100g), cải bó xôi (50g), nấm kim châm (30g), sốt mè đen (10g).",
-        image: "/assets/images/menu2.jpg",
+        name: "Bánh Kếp Yến Mạch Protein Cuộn Trái Cây ",
+        price: 35.000,
+        description: "bột yến mạch, bột nở, muối, đường, bột quế, trứng gà, sữa tươi, bơ lạt tan chảy, chiết xuất vani, dầu ăn, kết hợp với các loại trái cây tươi và có thể thêm hạt chia hoặc hạt khác để tăng protein và chất xơ",
+        image: "/assets/images/unnamed.png",
         category: "main",
         rating: 5,
         isVegan: true
     },
     {
         id: 3,
-        name: "Cơm Gạo Lứt Nấm Truffle và Ức Gà Nướng Thảo Mộc",
-        price: 9,
-        description: "Gạo lứt, ức gà, nấm truffle/dầu truffle, bông cải xanh/đậu que, tỏi, hành tây, thảo mộc khô.",
-        image: "/assets/images/menu3.jpg",
+        name: "Mì Shirataki Xào Sốt Đậu Phộng Cay & Tôm (Spicy Peanut Shirataki Noodles with Shrimp)",
+        price: 60.000,
+        description: "mì shirataki (làm từ củ konjac, ít calo), tôm tươi bóc vỏ, tỏi băm, ớt tươi hoặc ớt bột, bơ đậu phộng (peanut butter), nước tương",
+        image: "/assets/images/food1.png",
         category: "main",
         rating: 5,
         isVegan: true
     },
     {
         id: 4,
-        name: "Mì Konjac Cá Tuyết Áp Chảo Sốt Chanh Dây",
-        price: 12,
-        description: "Mì konjac (100g), cá tuyết (100g), zucchini (50g), ớt chuông (30g), sốt chanh dây (10g).",
-        image: "/assets/images/menu2.jpg",
+        name: "Gỏi Cuốn Tôm Tươi & Bơ Sốt Chanh Dây Hạt Chia",
+        price: 65.000,
+        description: "tôm tươi (ướp muối, tiêu, chiên hoặc áp chảo), bánh tráng, bún tươi, rau sống các loại (xà lách, rau thơm, giá đỗ), cà rốt bào sợi, hành tỏi băm, bơ, nước cốt chanh dây, đường, nước tương, ớt sa tế",
+        image: "/assets/images/unnamed (3).png",
         category: "main",
         rating: 4,
         isVegan: false
     },
     {
         id: 5,
-        name: "Cà Ri Gà Tofu Kiểu Ấn Độ Dùng Kèm Bánh Mì Nguyên Cám Nướng",
-        price: 8,
-        description: "Ức gà, đậu phụ, nước cốt dừa light, cà ri powder, khoai lang, bông cải xanh, đậu que, hành tây, gừng, tỏi.",
+        name: "Nui Xào Ức Gà & Rau Củ Sốt Tỏi Ớt Tamari (Stir-fried Macaroni with Chicken & Veggies with Garlic Chili Tamari Sauce)",
+        price: 60.000,
+        description: "nui ống luộc chín, ức gà cắt hạt lựu ướp gia vị, tỏi băm phi thơm, hành tây cắt múi cau, bông cải xanh cắt nhỏ, ớt chuông cắt sợi, dầu ăn, bơ, hạt nêm, tiêu, nước tương Tamari (là loại nước tương lên men tự nhiên, ít muối),",
         image: "/assets/images/menu5.jpg",
         category: "main",
         rating: 5,
         isVegan: false
     },
-  // Món phụ
+  // Bữa trưa
     {
         id: 6,
-        name: "Chả lá lốt yến mạch - đậu lăng",
-        price: 16,
-        description: "Đậu lăng (50g), yến mạch (20g), lá lốt, nấm hương, hành tây, tiêu.",
-        image: "/assets/images/food1.png",
+        name: "Bánh Xèo Healthy Tôm, Đậu Hũ & Nấm Đùi Gà Sốt Yogurt Chanh",
+        price: 50.000,
+        description: "Bánh Xèo Healthy Tôm, Đậu Hũ & Nấm Đùi Gà Sốt Yogurt Chan gồm: bột bánh xèo, nước cốt dừa, đậu xanh xay nhuyễn, hành lá, dầu ăn, tôm bóc vỏ xào sơ, đậu hũ chiên hoặc đậu phụ, nấm đùi gà xào sơ, nước lọc, muối, cùng với sốt yogurt chan dùng kèm",
+        image: "/assets/images/unnamed (2).png",
         category: "side",
         rating: 5,
         isVegan: false
     },
     {
         id: 7,
-        name: "Gỏi nấm đùi gà - dưa leo - mè rang",
-        price: 10,
-        description: "Nấm đùi gà (50g), dưa leo (50g), mè rang (5g), nước sốt mắm chay tỏi ớt",
-        image: "/assets/images/food2.png",
+        name: "Mì Udon Kiểu Nhật Xốt Kem Nấm & Tôm Tươi",
+        price: 70.000,
+        description: "mì udon (làm từ bột mì, nước, muối), tôm tươi bóc vỏ, rút chỉ lưng, nấm (thường là nấm shiitake hoặc nấm enoki), bơ, tỏi băm, sữa tươi không đường, kem whipping, phô mai Parmesan và phô mai cheddar, muối, tiêu, dầu olive hoặc dầu ăn, hành tây (tuỳ chọn), và các gia vị khác để tạo vị béo ngậy, thơm ngon đặc trưng của sốt kem nấm tôm.",
+        image: "/assets/images/unnamed (4).png",
         category: "side",
         rating: 4,
         isVegan: true
     },
     {
         id: 8,
-        name: "Bông Cải Xanh Xào Tỏi & Hạnh Nhân Lát",
-        price: 6,
-        description: "Bông cải xanh, tỏi, dầu olive, hạnh nhân lát.",
-        image: "/assets/images/food3.png",
+        name: "Cơm Gạo Lứt Nấm Truffle và Ức Gà Nướng Thảo Mộc",
+        price: 55.000,
+        description: "Bông cải xanh rửa sạch, tách nhỏ, có thể chần sơ qua nước sôi rồi để ráo để giữ độ giòn và màu xanh tươi. Tỏi băm nhỏ hoặc thái lát phi thơm với dầu olive. Cho bông cải xanh vào xào nhanh với tỏi phi, nêm chút muối, tiêu cho vừa ăn. Rắc hạnh nhân lát rang hoặc sống lên trên để tăng độ giòn, bùi và hương vị đặc trưng.",
+        image: "/assets/images/menu2.jpg",
         category: "side",
         rating: 4,
         isVegan: true
     },  {
         id: 9,
-        name: "Rau Củ Hấp Sốt Hạt Điều ",
-        price: 8,
-        description: "Bông cải trắng (50g), cà rốt (50g), đậu que (40g), sốt hạt điều (10g).",
-        image: "/assets/images/menu5.jpg",
+        name: "Mì Rau Củ Hấp Dẫn Sốt Tom Yum Chay & Nấm Tôm (Giả Cua) ",
+        price: 40.000,
+        description: "mì làm từ bột mì hoặc mì rau củ, các loại rau củ tươi (như cà rốt, cải bó xôi, ớt chuông), nấm tôm (nấm chân dài), nấm giả cua (có thể là nấm thủy tiên hoặc nấm mộc nhĩ được chế biến tạo hình giống cua), nước sốt Tom Yum chay",
+        image: "/assets/images/unnamed (5).png",
         category: "side",
         rating: 5,
         isVegan: true
     },
     {
         id: 10,
-        name: "Gỏi Bưởi Tôm Nướng & Lạc Rang",
-        price: 16,
-        description: "Bưởi, tôm, hành tây, rau răm, ớt, lạc rang.",
-        image: "/assets/images/food1.png",
+        name: "Bún Riêu Chay Thanh Đạm (Vegan Bún Riêu)",
+        price: 45.000,
+        description: "Bún gạo lứt, đậu hũ non, cà chua, nấm hương, rau củ (cho nước dùng), me/sấu, rau sống.",
+        image: "/assets/images/unnamed (6).png",
         category: "side",
         rating: 5,
         isVegan: true
     },
-     // Món tráng miệng
+     // bữa tối
     {
         id: 11,
-        name: "Salad Quinoa Chay & sốt tahnini",
-        price: 10,
-        description: "Salad quinoa với rau củ tươi, hạt chia và sốt tahini tự nhiên.",
-        image: "/assets/images/food2.png",
+        name: "Canh Chua Cá Diêu Hồng Nấm & Dứa (Thơm) - Phiên bản ít dầu",
+        price: 70.000,
+        description: "Cá diêu hồng, nấm đùi gà, dứa (thơm), giá đỗ, bạc hà, ngò gai, tỏi, dầu ô liu (rất ít), nước mắm nhĩ ít muối.",
+        image: "/assets/images/unnamed (7).png",
         category: "vegan",
         rating: 4,
         isVegan: true
     },
     {
         id: 12,
-        name: "Pudding Hạt Chia Dừa - Mật ông & xoài",
-        price: 6,
-        description: "Hạt chia (20g), sữa dừa (100ml), mật ong (5g), xoài (20g).",
-        image: "/assets/images/food3.png",
+        name: "Cháo Yến Mạch Tôm Tươi & Bông Cải Xanh (Savory Oat Porridge with Shrimp & Broccoli)",
+        price: 45.000,
+        description: "Yến mạch cán dẹt, tôm tươi, bông cải xanh, gừng, tương tamari, hành lá.",
+        image: "/assets/images/unnamed (10).png",
         category: "vegan",
         rating: 4,
         isVegan: false
     },
     {
         id: 13,
-        name: "Chè Dưỡng Nhan Tuyết Yến & Hạt Chia",
-        price: 11,
-        description: "Tuyết yến, nhựa đào, táo đỏ, long nhãn, kỷ tử, hạt chia, đường phèn/đường ăn kiêng.",
-        image: "/assets/images/menu1.jpg",
+        name: "Canh Rong Biển Đậu Hũ & Tôm (hoặc Ức Gà)",
+        price: 40.000,
+        description: "rong biển (khoảng 29,1%), đậu hũ non (khoảng 13,4%), tôm tươi hoặc ức gà, hành lá, muối, đường, hạt nêm, tiêu, nước mắm, chiết xuất nấm men, mè, và các vitamin premix B (B1, B3, B6, B9, B12)",
+        image: "/assets/images/unnamed (9).png",
         category: "vegan",
         rating: 5,
         isVegan: false,
     },
     {
         id: 14,
-        name: "Smoothie bơ - cacao - hạnh nhân",
-        price: 14,
-        description: "Bơ (1/2 quả), cacao nguyên chất (5g), hạnh nhân (10g), sữa hạnh nhân không đường (100ml).",
+        name: "kimbap gạo lức healthy đa sắc",
+        price: 50.000,
+        description: "gạo lứt, diêm mạch, cá hồi phi lê, rong biển, dưa leo, cà rốt, bơ, muối hồng hoặc muối ăn, tiêu, dầu mè, tương ớt, nước tương và các gia vị khác. Ngoài ra, có thể thêm trứng, rau chân vịt, xà lách tùy khẩu vị và công thức cụ thể",
         image: "/assets/images/menu2.jpg",
         category: "vegan",
         rating: 5,
         isVegan: false
     },
-    {
-        id: 15,
-        name: "Bánh Muffin Chuối Yến Mạch ",
-        price: 9,
-        description: "Yến mạch, chuối chín, trứng, mật ong/đường ăn kiêng, bột nở, hạt óc chó/hạnh nhân",
-        image: "/assets/images/menu3.jpg",
-        category: "vegan",
-        rating: 5,
-        isVegan: true
-    },
-    {
-        id: 16,
-        name: "Sữa Chua Hy Lạp Trái Cây Tươi",
-        price: 12,
-        description: "Sữa chua Hy Lạp (100g), dâu tây (30g), việt quất (20g).",
-        image: "/assets/images/menu2.jpg",
-        category: "vegan",
-        rating: 4,
-        isVegan: false
-    },
-    // Đồ uống
-    {
-        id: 17,
-        name: "Nước ép Xanh Detox",
-        price: 8,
-        description: "Cần tây, cải bó xôi, táo xanh, dưa chuột, gừng, một chút chanh tươi.",
-        image: "/assets/images/menu5.jpg",
-        category: "coffee",
-        rating: 5,
-        isVegan: false
-    },
-    {
-        id: 18,
-        name: "Detox cam - chanh - bạc hà - mật ong",
-        price: 16,
-        description: "Cam vàng (50g), chanh vàng (10g), bạc hà, mật ong (5ml), nước lọc",
-        image: "/assets/images/food1.png",
-        category: "coffee",
-        rating: 5,
-        isVegan: false
-    },
-    {
-        id: 19,
-        name: "Trà sen matcha - sữa hạnh nhân",
-        price: 10,
-        description: "Bột matcha (5g), nước trà sen ủ lạnh, sữa hạnh nhân không đường (100ml).",
-        image: "/assets/images/food2.png",
-        category: "coffee",
-        rating: 4,
-        isVegan: false
-    },
-    {
-        id: 20,
-        name: "Trà Kombucha Nhà Làm Vị Đào & Hạt Chia",
-        price: 6,
-        description: "Trà Kombucha nguyên bản, puree đào tươi, hạt chia. (Không thêm đường hoặc rất ít đường ăn kiêng nếu cần).",
-        image: "/assets/images/food3.png",
-        category: "coffee",
-        rating: 4,
-        isVegan: false
-    },  
-    {
-        id: 21,
-        name: "Sữa Hạt Hạnh Nhân & Hạt Điều Không Đường",
-        price: 8,
-        description: "Hạt hạnh nhân, hạt điều, nước lọc, một chút muối hồng.",
-        image: "/assets/images/menu5.jpg",
-        category: "coffee",
-        rating: 5,
-        isVegan: false
-    },
-    {
-        id: 22,
-        name: "Trà Hoa Đậu Biếc & Chanh Dây",
-        price: 16,
-        description: "Hoa đậu biếc khô, chanh dây tươi, nước lọc. (Có thể thêm chút mật ong/đường ăn kiêng).",
-        image: "/assets/images/food1.png",
-        category: "coffee",
-        rating: 5,
-        isVegan: false
-    },
-    {
-        id: 23,
-        name: "Cà Phê Đen Cold Brew & Nước Dừa Tươi",
-        price: 10,
-        description: "Cà phê Cold Brew (100% Arabica), nước dừa tươi",
-        image: "/assets/images/food2.png",
-        category: "coffee",
-        rating: 4,
-        isVegan: false
-    },
-    {
-        id: 24,
-        name: "Nước Ép Thanh Long Đỏ và Húng Quế",
-        price: 6,
-        description: "Thanh long đỏ ngọt dịu kết hợp với húng quế thơm nồng, tạo vị lạ miệng, tươi mát, giàu vitamin C. Thích hợp làm món signature cho quán.",
-        image: "/assets/images/food3.png",
-        category: "coffee",
-        rating: 4,
-        isVegan: false
-    },
-    {
-        id: 25,
-        name: "Sinh Tố Hạt Dẻ Cười và Dưa Gang",
-        price: 10,
-        description: "Dưa gang ngọt mát kết hợp sữa hạt dẻ cười béo thơm, điểm xuyết hạt chia, tạo trải nghiệm uống sang trọng, không giống bất kỳ sinh tố nào.",
-        image: "/assets/images/food2.png",
-        category: "coffee",
-        rating: 4,
-        isVegan: true
-    },
-    {
-        id: 26,
-        name: "Nước Ép Ổi Hồng và Cải Bó Xôi",
-        price: 6,
-        description: "Ổi hồng ngọt thơm kết hợp cải bó xôi giàu chất xơ, tạo màu xanh hồng độc đáo, vị lạ nhưng dễ uống, giàu vitamin.",
-        image: "/assets/images/food3.png",
-        category: "coffee",
-        rating: 4,
-        isVegan: false
-    },
+    // // Đồ uống
+    // {
+    //     id: 17,
+    //     name: "Nước ép Xanh Detox",
+    //     price: 8,
+    //     description: "Cần tây, cải bó xôi, táo xanh, dưa chuột, gừng, một chút chanh tươi.",
+    //     image: "/assets/images/menu5.jpg",
+    //     category: "coffee",
+    //     rating: 5,
+    //     isVegan: false
+    // },
+    // {
+    //     id: 18,
+    //     name: "Detox cam - chanh - bạc hà - mật ong",
+    //     price: 16,
+    //     description: "Cam vàng (50g), chanh vàng (10g), bạc hà, mật ong (5ml), nước lọc",
+    //     image: "/assets/images/food1.png",
+    //     category: "coffee",
+    //     rating: 5,
+    //     isVegan: false
+    // },
+    // {
+    //     id: 19,
+    //     name: "Trà sen matcha - sữa hạnh nhân",
+    //     price: 10,
+    //     description: "Bột matcha (5g), nước trà sen ủ lạnh, sữa hạnh nhân không đường (100ml).",
+    //     image: "/assets/images/food2.png",
+    //     category: "coffee",
+    //     rating: 4,
+    //     isVegan: false
+    // },
+    // {
+    //     id: 20,
+    //     name: "Trà Kombucha Nhà Làm Vị Đào & Hạt Chia",
+    //     price: 6,
+    //     description: "Trà Kombucha nguyên bản, puree đào tươi, hạt chia. (Không thêm đường hoặc rất ít đường ăn kiêng nếu cần).",
+    //     image: "/assets/images/food3.png",
+    //     category: "coffee",
+    //     rating: 4,
+    //     isVegan: false
+    // },  
+    // {
+    //     id: 21,
+    //     name: "Sữa Hạt Hạnh Nhân & Hạt Điều Không Đường",
+    //     price: 8,
+    //     description: "Hạt hạnh nhân, hạt điều, nước lọc, một chút muối hồng.",
+    //     image: "/assets/images/menu5.jpg",
+    //     category: "coffee",
+    //     rating: 5,
+    //     isVegan: false
+    // },
+    // {
+    //     id: 22,
+    //     name: "Trà Hoa Đậu Biếc & Chanh Dây",
+    //     price: 16,
+    //     description: "Hoa đậu biếc khô, chanh dây tươi, nước lọc. (Có thể thêm chút mật ong/đường ăn kiêng).",
+    //     image: "/assets/images/food1.png",
+    //     category: "coffee",
+    //     rating: 5,
+    //     isVegan: false
+    // },
+    // {
+    //     id: 23,
+    //     name: "Cà Phê Đen Cold Brew & Nước Dừa Tươi",
+    //     price: 10,
+    //     description: "Cà phê Cold Brew (100% Arabica), nước dừa tươi",
+    //     image: "/assets/images/food2.png",
+    //     category: "coffee",
+    //     rating: 4,
+    //     isVegan: false
+    // },
+    // {
+    //     id: 24,
+    //     name: "Nước Ép Thanh Long Đỏ và Húng Quế",
+    //     price: 6,
+    //     description: "Thanh long đỏ ngọt dịu kết hợp với húng quế thơm nồng, tạo vị lạ miệng, tươi mát, giàu vitamin C. Thích hợp làm món signature cho quán.",
+    //     image: "/assets/images/food3.png",
+    //     category: "coffee",
+    //     rating: 4,
+    //     isVegan: false
+    // },
+    // {
+    //     id: 25,
+    //     name: "Sinh Tố Hạt Dẻ Cười và Dưa Gang",
+    //     price: 10,
+    //     description: "Dưa gang ngọt mát kết hợp sữa hạt dẻ cười béo thơm, điểm xuyết hạt chia, tạo trải nghiệm uống sang trọng, không giống bất kỳ sinh tố nào.",
+    //     image: "/assets/images/food2.png",
+    //     category: "coffee",
+    //     rating: 4,
+    //     isVegan: true
+    // },
+    // {
+    //     id: 26,
+    //     name: "Nước Ép Ổi Hồng và Cải Bó Xôi",
+    //     price: 6,
+    //     description: "Ổi hồng ngọt thơm kết hợp cải bó xôi giàu chất xơ, tạo màu xanh hồng độc đáo, vị lạ nhưng dễ uống, giàu vitamin.",
+    //     image: "/assets/images/food3.png",
+    //     category: "coffee",
+    //     rating: 4,
+    //     isVegan: false
+    // },
     
 ];
 
